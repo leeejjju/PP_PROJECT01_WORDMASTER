@@ -9,7 +9,7 @@ public class WordCRUD implements ICRUD{
     private Scanner in;
 
     private int id;
-    private int level;
+    private int level = 1;
     private String word;
     private String meaning;
 
@@ -33,9 +33,16 @@ public class WordCRUD implements ICRUD{
         if(list.isEmpty()) id = 1;
         else id = list.get(list.size()-1).getId()+1;
 
-        System.out.print("난이도(1,2,3) & 새 단어 입력 : ");
-        level = in.nextInt();
-        word = in.nextLine();
+        while(true){
+            System.out.print("난이도(1,2,3) & 새 단어 입력 : ");
+            level = in.nextInt();
+            word = in.nextLine();
+
+            if(level > 0 && level < 4) break;
+            else System.out.println("\n유효한 난이도를 입력해주세요 :(\n");
+
+        }
+
         System.out.print("뜻 입력 : ");
         meaning = in.nextLine();
         Word myWord = new Word(id, level, word, meaning);
