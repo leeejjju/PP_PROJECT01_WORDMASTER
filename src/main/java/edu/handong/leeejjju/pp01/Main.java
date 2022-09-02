@@ -2,6 +2,7 @@ package edu.handong.leeejjju.pp01;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        WordManager myWordManager = new WordManager();
+        myWordManager.start();
     }
 }
