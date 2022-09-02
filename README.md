@@ -1,6 +1,8 @@
-# PROJECT01_ Java CRUD project with file I/O
+# PROJECT01_WORD_MASTER
 > Web Service Development 2022-2
->
+> 
+> Java CRUD project with file I/O
+> 
 > 22100579 이진주
 
 ***

@@ -1,4 +1,4 @@
-package edu.handong.leeejjju_pp01;
+package edu.handong.leeejjju.pp01;
 
 public class Main {
     public static void main(String[] args) {
