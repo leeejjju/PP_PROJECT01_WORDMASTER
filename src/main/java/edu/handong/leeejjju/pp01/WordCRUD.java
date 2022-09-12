@@ -229,7 +229,17 @@ public class WordCRUD implements ICRUD{
     }
 
 
+    public void loadFile(){
+        //C:\Java\workspace_new\PP_Project01_WordMaster\data
 
+        int num = 0;
+        System.out.println("\n" + num + "개 단어 로딩 완료!");
+    }
+
+    public void saveFile(){
+        //C:\Java\workspace_new\PP_Project01_WordMaster\data
+
+    }
 
 
 

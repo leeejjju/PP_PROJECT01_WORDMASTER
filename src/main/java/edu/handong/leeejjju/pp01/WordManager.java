@@ -12,6 +12,7 @@ public class WordManager {
     }
 
     public void start(){
+        myWordCRUD.loadFile();
         System.out.println("\n**** 영단어 마스터 ****");
         while(CMD != 0){
             CMD = selectMenu();
@@ -29,6 +30,9 @@ public class WordManager {
                     break;
                 case 3:
                     //검색
+                    System.out.printf("=> 단어 검색 : ");
+                    String keyWord = in.next();
+                    myWordCRUD.search(keyWord);
                     break;
                 case 4:
                     //추가
@@ -41,10 +45,10 @@ public class WordManager {
                 case 6:
                     //삭제
                     myWordCRUD.deleteItem();
-                    //list.remove(int index-1)
                     break;
                 case 7:
                     //파일저장
+                    myWordCRUD.saveFile();
                     break;
                 default:
                     System.out.println("\n유효한 숫자를 입력해주세요 :(\n");
@@ -85,15 +89,7 @@ public class WordManager {
     Dictionary.txt
     3 | superintendent | 관리자, 감독관
      */
-    public void loadFile(){
-        //C:\Java\workspace_new\PP_Project01_WordMaster\data
-    }
 
-    public void saveFile(){
-        //C:\Java\workspace_new\PP_Project01_WordMaster\data
-
-
-    }
 
 
 }
