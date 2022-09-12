@@ -17,7 +17,7 @@ public class WordManager {
             CMD = selectMenu();
             switch (CMD){
                 case 0 :
-                    System.out.println("\n행복한 하루 보내세요 XD");
+                    System.out.println("\n행복한 하루 되세요 XD");
                     break;
                 case 1:
                     //전체보기
@@ -25,6 +25,7 @@ public class WordManager {
                     break;
                 case 2:
                     //수준별보기
+                    myWordCRUD.listSelectedLevel();
                     break;
                 case 3:
                     //검색
@@ -39,6 +40,7 @@ public class WordManager {
                     break;
                 case 6:
                     //삭제
+                    myWordCRUD.deleteItem();
                     //list.remove(int index-1)
                     break;
                 case 7:
@@ -69,6 +71,29 @@ public class WordManager {
     }
 
 
+    /*
+    관리하는 데이터 파일로 저장
+    함수생성/파일명(저장위치)/파일포맷
+    ex) 
+    파일명 - Dictionary.txt
+    데이터 저장 포맷: level | 영단어 | 뜻
+
+    ==> 33개 데이터 로딩 완료!!!
+    ***영단어 마스터***
+    (인트로 페이지)
+
+    Dictionary.txt
+    3 | superintendent | 관리자, 감독관
+     */
+    public void loadFile(){
+        //C:\Java\workspace_new\PP_Project01_WordMaster\data
+    }
+
+    public void saveFile(){
+        //C:\Java\workspace_new\PP_Project01_WordMaster\data
+
+
+    }
 
 
 }

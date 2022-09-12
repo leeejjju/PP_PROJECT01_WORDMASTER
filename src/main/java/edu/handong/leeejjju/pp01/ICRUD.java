@@ -4,8 +4,8 @@ package edu.handong.leeejjju.pp01;
 public interface ICRUD {
 
     public Object add(); //추가될 데이터를 리턴
-    public int update(Object obj);
-    public int delete(Object obj);
+    public int updateItem();
+    public int deleteItem();
     public void selectOne(int id);
 
 }
