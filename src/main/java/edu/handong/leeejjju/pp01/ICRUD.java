@@ -6,6 +6,5 @@ public interface ICRUD {
     public Object add(); //추가될 데이터를 리턴
     public int updateItem();
     public int deleteItem();
-    public void selectOne(int id);
 
 }

@@ -36,7 +36,7 @@ public class WordManager {
                     break;
                 case 5:
                     //수정
-                    //list.set(int index, Object)
+                    myWordCRUD.updateItem();
                     break;
                 case 6:
                     //삭제
