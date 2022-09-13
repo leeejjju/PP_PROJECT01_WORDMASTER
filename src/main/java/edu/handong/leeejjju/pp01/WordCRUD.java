@@ -1,6 +1,8 @@
 package edu.handong.leeejjju.pp01;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 //ICRUD interface의 구현체
 public class WordCRUD implements ICRUD{
@@ -231,13 +233,43 @@ public class WordCRUD implements ICRUD{
 
     public void loadFile(){
         //C:\Java\workspace_new\PP_Project01_WordMaster\data
-
+        //Dictionary.txt
         int num = 0;
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("data/Dictionary.txt"));
+            String oneLine;
+            while((oneLine = br.readLine()) != null){
+                StringTokenizer st = new StringTokenizer(oneLine, "|");
+                int LEVEL = Integer.parseInt(st.nextToken());
+                String WORD = st.nextToken();
+                String MEANING = st.nextToken();
+                Word newW = new Word(0, LEVEL, WORD, MEANING);
+                list.add(newW);
+                num++;
+                //System.out.printf("%d | %s | %s\n", LEVEL, WORD, MEANING);
+
+            }
+        }catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("\n" + num + "개 단어 로딩 완료!");
     }
 
     public void saveFile(){
         //C:\Java\workspace_new\PP_Project01_WordMaster\data
+        try{
+            Writer w = new FileWriter("data/Dictionary.txt");
+            for(int i = 0; i < list.size(); i++){
+                w.write(list.get(i).getLevel() + "|"+list.get(i).getWord() + "|"+list.get(i).getMeaning()+"\n");
+            }
+            w.close();
+            System.out.println("현재 단어장으로 저장되었습니다.\n");
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
